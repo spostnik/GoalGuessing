@@ -102,6 +102,11 @@ namespace GoalGuessing
             this.labelOR = new System.Windows.Forms.Label();
             this.labelDR = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.radioButtonRA7 = new System.Windows.Forms.RadioButton();
+            this.radioButtonRA8 = new System.Windows.Forms.RadioButton();
+            this.radioButtonRB7 = new System.Windows.Forms.RadioButton();
+            this.radioButtonRB8 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,6 +136,7 @@ namespace GoalGuessing
             this.groupBox1.Controls.Add(this.radioButton1H);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.radioButton1G);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox1.Location = new System.Drawing.Point(605, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(176, 50);
@@ -218,6 +224,7 @@ namespace GoalGuessing
             this.groupBox2.Controls.Add(this.radioButton2H);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.radioButton2G);
+            this.groupBox2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.groupBox2.Location = new System.Drawing.Point(605, 142);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(176, 50);
@@ -279,6 +286,7 @@ namespace GoalGuessing
             this.groupBox3.Controls.Add(this.radioButton3H);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.radioButton3G);
+            this.groupBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox3.Location = new System.Drawing.Point(605, 198);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(176, 50);
@@ -335,6 +343,7 @@ namespace GoalGuessing
             this.groupBox4.Controls.Add(this.radioButton4H);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.radioButton4G);
+            this.groupBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox4.Location = new System.Drawing.Point(605, 254);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(176, 50);
@@ -391,6 +400,7 @@ namespace GoalGuessing
             this.groupBox5.Controls.Add(this.radioButton5H);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.radioButton5G);
+            this.groupBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox5.Location = new System.Drawing.Point(605, 310);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(176, 50);
@@ -448,6 +458,7 @@ namespace GoalGuessing
             this.groupBox6.Controls.Add(this.radioButton6H);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.radioButton6G);
+            this.groupBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox6.Location = new System.Drawing.Point(605, 366);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(176, 50);
@@ -521,11 +532,12 @@ namespace GoalGuessing
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(334, 10);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.textBox1.Location = new System.Drawing.Point(368, 10);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 29);
+            this.textBox1.Size = new System.Drawing.Size(57, 29);
             this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "45";
+            this.textBox1.Text = "45.0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -533,7 +545,8 @@ namespace GoalGuessing
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(334, 42);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label10.Location = new System.Drawing.Point(375, 42);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 25);
             this.label10.TabIndex = 13;
@@ -571,17 +584,20 @@ namespace GoalGuessing
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(478, 310);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(478, 354);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 119);
+            this.button1.Size = new System.Drawing.Size(116, 75);
             this.button1.TabIndex = 24;
-            this.button1.Text = "PREDICT";
+            this.button1.Text = "PREDICT GOAL RANGE";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBoxRi
             // 
+            this.groupBoxRi.Controls.Add(this.radioButtonRA8);
+            this.groupBoxRi.Controls.Add(this.radioButtonRA7);
             this.groupBoxRi.Controls.Add(this.radioButtonRA6);
             this.groupBoxRi.Controls.Add(this.radioButtonRA5);
             this.groupBoxRi.Controls.Add(this.radioButtonRA4);
@@ -589,10 +605,11 @@ namespace GoalGuessing
             this.groupBoxRi.Controls.Add(this.radioButtonRA2);
             this.groupBoxRi.Controls.Add(this.radioButtonRA1);
             this.groupBoxRi.Controls.Add(this.radioButtonRA0);
+            this.groupBoxRi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBoxRi.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBoxRi.Location = new System.Drawing.Point(478, 116);
             this.groupBoxRi.Name = "groupBoxRi";
-            this.groupBoxRi.Size = new System.Drawing.Size(58, 188);
+            this.groupBoxRi.Size = new System.Drawing.Size(58, 232);
             this.groupBoxRi.TabIndex = 25;
             this.groupBoxRi.TabStop = false;
             this.groupBoxRi.Text = "from";
@@ -679,6 +696,8 @@ namespace GoalGuessing
             // 
             // groupBoxRf
             // 
+            this.groupBoxRf.Controls.Add(this.radioButtonRB8);
+            this.groupBoxRf.Controls.Add(this.radioButtonRB7);
             this.groupBoxRf.Controls.Add(this.radioButtonRB6);
             this.groupBoxRf.Controls.Add(this.radioButtonRB5);
             this.groupBoxRf.Controls.Add(this.radioButtonRB4);
@@ -686,10 +705,11 @@ namespace GoalGuessing
             this.groupBoxRf.Controls.Add(this.radioButtonRB2);
             this.groupBoxRf.Controls.Add(this.radioButtonRB1);
             this.groupBoxRf.Controls.Add(this.radioButtonRB0);
+            this.groupBoxRf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBoxRf.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBoxRf.Location = new System.Drawing.Point(536, 116);
             this.groupBoxRf.Name = "groupBoxRf";
-            this.groupBoxRf.Size = new System.Drawing.Size(58, 188);
+            this.groupBoxRf.Size = new System.Drawing.Size(58, 232);
             this.groupBoxRf.TabIndex = 26;
             this.groupBoxRf.TabStop = false;
             this.groupBoxRf.Text = "to";
@@ -788,12 +808,12 @@ namespace GoalGuessing
             // labelInfo
             // 
             this.labelInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelInfo.Cursor = System.Windows.Forms.Cursors.No;
+            this.labelInfo.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.labelInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo.Location = new System.Drawing.Point(131, 9);
+            this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfo.Location = new System.Drawing.Point(131, 42);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(197, 75);
+            this.labelInfo.Size = new System.Drawing.Size(197, 42);
             this.labelInfo.TabIndex = 29;
             this.labelInfo.Text = "Input current data";
             this.labelInfo.Click += new System.EventHandler(this.labelInfo_Click);
@@ -858,6 +878,7 @@ namespace GoalGuessing
             // 
             this.labelHW.AutoSize = true;
             this.labelHW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHW.ForeColor = System.Drawing.Color.Fuchsia;
             this.labelHW.Location = new System.Drawing.Point(131, 88);
             this.labelHW.Name = "labelHW";
             this.labelHW.Size = new System.Drawing.Size(19, 20);
@@ -869,6 +890,7 @@ namespace GoalGuessing
             // 
             this.labelGW.AutoSize = true;
             this.labelGW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGW.ForeColor = System.Drawing.Color.Fuchsia;
             this.labelGW.Location = new System.Drawing.Point(212, 88);
             this.labelGW.Name = "labelGW";
             this.labelGW.Size = new System.Drawing.Size(19, 20);
@@ -879,6 +901,7 @@ namespace GoalGuessing
             // 
             this.labelOR.AutoSize = true;
             this.labelOR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOR.ForeColor = System.Drawing.Color.Fuchsia;
             this.labelOR.Location = new System.Drawing.Point(364, 88);
             this.labelOR.Name = "labelOR";
             this.labelOR.Size = new System.Drawing.Size(19, 20);
@@ -889,6 +912,7 @@ namespace GoalGuessing
             // 
             this.labelDR.AutoSize = true;
             this.labelDR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDR.ForeColor = System.Drawing.Color.Fuchsia;
             this.labelDR.Location = new System.Drawing.Point(288, 88);
             this.labelDR.Name = "labelDR";
             this.labelDR.Size = new System.Drawing.Size(19, 20);
@@ -899,6 +923,7 @@ namespace GoalGuessing
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label13.Location = new System.Drawing.Point(426, 12);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(46, 25);
@@ -906,11 +931,63 @@ namespace GoalGuessing
             this.label13.Text = "min";
             this.label13.Click += new System.EventHandler(this.label13_Click_1);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Cursor = System.Windows.Forms.Cursors.No;
+            this.label17.Font = new System.Drawing.Font("Jokerman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(126, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(205, 31);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "GOAL PREDICTOR";
+            // 
+            // radioButtonRA7
+            // 
+            this.radioButtonRA7.AutoSize = true;
+            this.radioButtonRA7.Location = new System.Drawing.Point(21, 180);
+            this.radioButtonRA7.Name = "radioButtonRA7";
+            this.radioButtonRA7.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonRA7.TabIndex = 16;
+            this.radioButtonRA7.Text = "7";
+            this.radioButtonRA7.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonRA8
+            // 
+            this.radioButtonRA8.AutoSize = true;
+            this.radioButtonRA8.Location = new System.Drawing.Point(21, 203);
+            this.radioButtonRA8.Name = "radioButtonRA8";
+            this.radioButtonRA8.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonRA8.TabIndex = 17;
+            this.radioButtonRA8.Text = "8";
+            this.radioButtonRA8.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonRB7
+            // 
+            this.radioButtonRB7.AutoSize = true;
+            this.radioButtonRB7.Location = new System.Drawing.Point(21, 180);
+            this.radioButtonRB7.Name = "radioButtonRB7";
+            this.radioButtonRB7.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonRB7.TabIndex = 16;
+            this.radioButtonRB7.Text = "7";
+            this.radioButtonRB7.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonRB8
+            // 
+            this.radioButtonRB8.AutoSize = true;
+            this.radioButtonRB8.Location = new System.Drawing.Point(21, 203);
+            this.radioButtonRB8.Name = "radioButtonRB8";
+            this.radioButtonRB8.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonRB8.TabIndex = 17;
+            this.radioButtonRB8.Text = "8";
+            this.radioButtonRB8.UseVisualStyleBackColor = true;
+            // 
             // FormGG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.labelOR);
             this.Controls.Add(this.labelDR);
@@ -942,6 +1019,7 @@ namespace GoalGuessing
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormGG";
             this.Text = "GP v0.1.2";
@@ -1040,6 +1118,11 @@ namespace GoalGuessing
         private System.Windows.Forms.Label labelOR;
         private System.Windows.Forms.Label labelDR;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RadioButton radioButtonRA8;
+        private System.Windows.Forms.RadioButton radioButtonRA7;
+        private System.Windows.Forms.RadioButton radioButtonRB8;
+        private System.Windows.Forms.RadioButton radioButtonRB7;
     }
 }
 
