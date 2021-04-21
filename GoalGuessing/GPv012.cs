@@ -419,7 +419,7 @@ namespace GoalGuessing
         /*
         double[] fac = {1, 1, 2, 6, 24, 120,
                         720, 5040, 40320, 362880,3628800,39916800,
-                        479001600, };
+                        479001600 };
         */
         private float[][,] goal_rate = new float[9][,];
         private int[][,] mask = new int[9][,];
@@ -532,7 +532,7 @@ namespace GoalGuessing
             List<string> outcomes = new List<string>();
             smax = "";
             s = "";
-            for (int i = tt; i < 8 - 0; i++) smax += "G";/// 8 - 2? 
+            for (int i = tt; i < 8 - 2; i++) smax += "G";/// 8 - 2? 
             //cumulative
             pu = 0.0;
             do
@@ -611,7 +611,7 @@ namespace GoalGuessing
                     team = events[0] == 'H' ? 0 : 1;
                     p = this.goal_rate[now][gg, team] * (T - time);
                     //stat mask
-                    p *= this.mask[now][gg, team];///
+                    //p *= this.mask[now][gg, team];///
                     break;
                 default: // over one goal case
                     pp = 1.0;
@@ -623,7 +623,7 @@ namespace GoalGuessing
                         Console.WriteLine($"rate={this.goal_rate[now + Hgoals + Ggoals][gg + Ggoals, team]}");
                         pp *= this.goal_rate[now + Hgoals + Ggoals][gg + Ggoals, team];
                         //stats mask
-                        pp *= this.mask[now + Hgoals + Ggoals][gg + Hgoals, team];///
+                        //pp *= this.mask[now + Hgoals + Ggoals][gg + Hgoals, team];///
                         Console.WriteLine($"goals={goals} Hg ={Hgoals} Gg={Ggoals} pp={pp}");
                         Hgoals += (1 - team);
                         Ggoals += (team);
