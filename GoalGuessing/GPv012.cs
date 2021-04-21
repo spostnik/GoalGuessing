@@ -17,9 +17,10 @@ namespace GoalGuessing
     {
         //form properties
         private int host = 0, guest = 0; //goals
-        private float time_now = 45.0F, game_time = 90.0F; //in minutes
+        private float time_now = 0.0F, game_time = 90.0F; //in minutes
         private int from_ = 0, to_ = 0; //goal range
-        private float[,] stat = new float[10,10]; //input statistics
+        private const int GMAX = 10;
+        private float[,] stat = new float[GMAX+1, GMAX+1]; //input statistics
         private float hwins = 0F, gwins = 0F, draw = 0F, outside = 0F; //results
         private List<GroupBox> goalsGroup = new List<GroupBox>(); //goal records
         private ModelGG model1;
@@ -32,9 +33,9 @@ namespace GoalGuessing
             labelInfo.Text = "Games statistics. Input current game.";
             initGoals();
             model1 = new ModelGG();
-            model1.initModel(stat, game_time);
+            model1.initModel(stat, game_time, GMAX);
             model1.prntModel();
-            Console.WriteLine(ABOUT());
+            //Console.WriteLine(ABOUT());
         }
         private void initGoals()
         {
@@ -59,6 +60,8 @@ namespace GoalGuessing
         private void initStat()
         {
             string[] lines = File.ReadAllLines("data\\stat_tab.dat");
+            for (int i = 0; i <= GMAX; i++) for (int j = 0; j <= GMAX; j++) stat[i, j] = 0F;
+            float pt = 0F;
             foreach(string line in lines)
             {
                 string[] items = line.Split();
@@ -67,31 +70,33 @@ namespace GoalGuessing
                 int gg = int.Parse(items[1]);
                 float pp = float.Parse(items[2]);
                 stat[hh, gg] = pp / 100.0F;
-                //Console.WriteLine(items[0]);
+                pt += pp;
+                Console.WriteLine($"{hh}:{gg} {pp} %");
             }
+            Console.WriteLine($"100% ? {pt}");
         }
         private void initChart()
         {
             //Console.WriteLine("test");
             hwins = gwins = draw = outside = 0F;
-            for ( int h = 0; h < 7; h++)
+            for ( int h = 0; h <= GMAX; h++)
             {
-                for ( int g = 0; g < 7; g++)
+                for ( int g = 0; g <= GMAX; g++)
                 {
                     if (h == g) draw += stat[h,g];
                     else if (h > g) hwins += stat[h, g];
                     else gwins += stat[h, g];
                 }
             }
-            hwins = (float)Math.Round( 100.0F * hwins, 1);
-            gwins = (float)Math.Round( 100.0F * gwins, 1);
-            draw = (float)Math.Round( 100.0F * draw, 1);
-            outside = (float)Math.Round(100.0F * outside, 1);
+            hwins = (float)Math.Round( 100.0F * hwins, 2);
+            gwins = (float)Math.Round( 100.0F * gwins, 2);
+            draw = (float)Math.Round( 100.0F * draw, 2);
+            outside = (float)Math.Round(100.0F * outside, 2);
 
             chart1.Series["answers"].Points.AddXY("HOST WINS", hwins );
             chart1.Series["answers"].Points.AddXY("GUEST WINS", gwins );
-            chart1.Series["answers"].Points.AddXY("DRAW", draw );
-            chart1.Series["answers"].Points.AddXY("NOT IN RANGE", outside );
+            chart1.Series["answers"].Points.AddXY("DRAWS", draw );
+            chart1.Series["answers"].Points.AddXY("...", outside );
             labelHW.Text = hwins.ToString() + " %";
             labelGW.Text = gwins.ToString() + " %";
             labelDR.Text = draw.ToString() + " %";
@@ -100,14 +105,14 @@ namespace GoalGuessing
         private void _chartRenew()
         {
             chart1.Series["answers"].Points.Clear();
-            chart1.Series["answers"].Points.AddXY("host wins", hwins);
-            chart1.Series["answers"].Points.AddXY("guest wins", gwins);
-            chart1.Series["answers"].Points.AddXY("draw", draw);
-            chart1.Series["answers"].Points.AddXY("outside", outside);
-            labelHW.Text = Math.Round(hwins, 1).ToString() + " %";
-            labelGW.Text = Math.Round(gwins, 1).ToString() + " %";
-            labelDR.Text = Math.Round(draw, 1).ToString() + " %";
-            labelOR.Text = Math.Round(outside, 1).ToString() + " %";
+            chart1.Series["answers"].Points.AddXY("HOST WINS", hwins);
+            chart1.Series["answers"].Points.AddXY("GUEST WINS", gwins);
+            chart1.Series["answers"].Points.AddXY("DRAW", draw);
+            chart1.Series["answers"].Points.AddXY("OUT OF RANGE", outside);
+            labelHW.Text = Math.Round(hwins, 2).ToString() + " %";
+            labelGW.Text = Math.Round(gwins, 2).ToString() + " %";
+            labelDR.Text = Math.Round(draw, 2).ToString() + " %";
+            labelOR.Text = Math.Round(outside, 2).ToString() + " %";
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -374,6 +379,26 @@ namespace GoalGuessing
             _range_set();
         }
 
+        private void radioButtonRA7_CheckedChanged(object sender, EventArgs e)
+        {
+            _range_set();
+        }
+
+        private void radioButtonRB7_CheckedChanged(object sender, EventArgs e)
+        {
+            _range_set();
+        }
+
+        private void radioButtonRA8_CheckedChanged(object sender, EventArgs e)
+        {
+            _range_set();
+        }
+
+        private void radioButtonRB8_CheckedChanged(object sender, EventArgs e)
+        {
+            _range_set();
+        }
+
         private void radioButtonRB6_CheckedChanged(object sender, EventArgs e)
         {
             _range_set();
@@ -393,12 +418,15 @@ namespace GoalGuessing
         {
 
         }
-
+        private void FormGG_FormClosed(object sender, FormClosingEventArgs e)
+        {
+            Console.Write(ABOUT());
+        }
         static string ABOUT()
         {
             string me = "Dr. Sergey Postnikov";
-            string date = "20-Apr-2021";
-            string version = "0.1.3";
+            string date = "21-Apr-2021";
+            string version = "0.1.4";
             string UUID = "9f0ed698-6285-4e81-b820-1136ccd948b4";
             string HASH = "..."; //replace with "..." then check hash
             return $"Author {me},\n date {date},\n version {version}," +
@@ -421,27 +449,34 @@ namespace GoalGuessing
                         720, 5040, 40320, 362880,3628800,39916800,
                         479001600 };
         */
-        private float[][,] goal_rate = new float[9][,];
-        private int[][,] mask = new int[9][,];
-        private float[,] stat_matrix = new float[10,10];
-        public void initModel(float[,] stat_given, float t_game)
+        private float[][,] goal_rate = new float[10][,];
+        private int[][,] mask = new int[10][,];
+        private float[,] stat_matrix = new float[11,11];
+        private int GMAX=10;
+        private List<double> facs = new List<double>();
+        public bool initModel(float[,] stat_given, float t_game, int gmax)
         {
+            //total goals maximum
+            this.GMAX = gmax;
+            //list for factorials
+            for (int i = 0; i <= 2*GMAX-1; i++) this.facs.Add(i == 0 ? 1 : this.facs[i - 1] * i);
+            if (this.GMAX > 10) return false;
             // saving input stats to stat. matrix
-            for (int i=0; i < 10; i++) for (int j=0; j < 10; j++) this.stat_matrix[i, j] = stat_given[i,j];
+            for (int i=0; i < this.GMAX; i++) for (int j=0; j < this.GMAX; j++) this.stat_matrix[i, j] = stat_given[i,j];
             // goal rate probability matrix, mask instances and zeroed
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < this.GMAX; i++)
             {
                 this.goal_rate[i] = new float[i + 1, 2];
                 this.mask[i] = new int[i + 1, 2];
             }
-            for (int i = 0; i < 9; i++) for(int j =0; j<=i; j++) for(int k=0; k<=1; k++)
+            for (int i = 0; i < this.GMAX; i++) for(int j =0; j<=i; j++) for(int k=0; k<=1; k++)
             {
-                this.goal_rate[i][j,k] = 0;
+                this.goal_rate[i][j,k] = 0.0F;
                 this.mask[i][j,k] = 0;
             }
             // goal rates are calculated from statistics given
             // hg - host goals, tot - total goals
-            for (int tot = 0; tot < 9; tot++) for (int hg = tot; hg >= 0; hg--)
+            for (int tot = 0; tot < this.GMAX; tot++) for (int hg = tot; hg >= 0; hg--)
                 {
                     //gg - guest goals
                     int gg;
@@ -483,9 +518,10 @@ namespace GoalGuessing
                         }
                     }
                     //stat mask
-                    this.mask[tot][hg, H] = stat_given[hg + 1, gg] == 0 ? 0 : 1;///
-                    this.mask[tot][hg, G] = stat_given[hg, gg + 1] == 0 ? 0 : 1;///
+                    this.mask[tot][hg, H] = stat_given[hg + 1, gg] == 0 ? 0 : 1;
+                    this.mask[tot][hg, G] = stat_given[hg, gg + 1] == 0 ? 0 : 1;
                 }
+            return true;
         }
         public void prntModel()
         {
@@ -532,7 +568,7 @@ namespace GoalGuessing
             List<string> outcomes = new List<string>();
             smax = "";
             s = "";
-            for (int i = tt; i < 8 - 2; i++) smax += "G";/// 8 - 2? 
+            for (int i = tt; i < 8 - 2*0; i++) smax += "G";/// 8 - 2? 
             //cumulative
             pu = 0.0;
             do
@@ -551,17 +587,17 @@ namespace GoalGuessing
                 ss = outcomes.Last();
                 pp = GoalProbabilty(time, hg, gg, ss);
                 goals = tt + ss.Length;
-                Console.WriteLine($"GoalProb. = {pp}");////
+                Console.WriteLine($"GoalProb. = {pp}");///
                 hmore = ss.Split('H').Length - 1;
                 gmore = ss.Split('G').Length - 1;
                 hnew = hg + hmore;
                 gnew = gg + gmore;
-                if (this.mask[goals][gnew, s == "H" ? 0 : 1] != 0 || pp == 0.0)
+                if (pp > 0.0)
                 {
-                    pu += pp; ///
+                    pu += pp;
                     if (goals >= ri && goals <= rf)
                     {
-                        Console.WriteLine($"goals = {goals} +h={hmore} +g={gmore}");////
+                        Console.WriteLine($"goals = {goals} +h={hmore} +g={gmore}");///
                         if (hnew > gnew) phw += pp;
                         else if (hnew < gnew) pgw += pp;
                         else pdr += pp;
@@ -571,19 +607,36 @@ namespace GoalGuessing
                         pos += pp; //outside the range
                     }
                 }
-                Console.WriteLine($"phw = {phw} pgw={pgw} pdr={pdr} pos={pos}");////
+                else {
+                    if (pp<0) Console.WriteLine($"!!! pp = {pp}");///
+                }
+                Console.WriteLine($"phw = {phw} pgw={pgw} pdr={pdr} pos={pos}");///
             } while (ss != smax);
             //no goals scored
-            Console.WriteLine($"pu={pu}");////
-            pp = 1.0 - pu; // no more goals chance
-            ////pp = stat_matrix[hg, gg];
+            Console.WriteLine($"pu={pu}");///
+            //probability normaliztion
+            double k = 1;
+            if (tt == 0)
+            {
+                pp = 1.0 - pu; // no more goals chance
+            }
+            else
+            {
+                pp = this.stat_matrix[hg, gg]; //no more goals in time remaining
+                k = (1 - pp) / pu;
+                phw *= k;
+                pgw *= k;
+                pdr *= k;
+                pos *= k;
+            }
             if (tt >= ri && tt <= rf)
             {
                 if (hg > gg) phw += pp;
                 else if (hg < gg) pgw += pp;
                 else pdr += pp;
             }
-            else {
+            else
+            {
                 pos += pp;
             };
             //host wins, guest wins, draw, outside of the range
@@ -630,13 +683,13 @@ namespace GoalGuessing
                     }
                     pp /= Math.Pow(T, goals - 1);
                     //factorial
-                    fac = 1;
-                    for (int i = 1; i <= 2 * goals - 1; i++) fac *= i;
-                    pp /= fac;
+                    ///fac = 1;
+                    ///for (int i = 1; i <= 2 * goals - 1; i++) fac *= i;
+                    pp /= this.facs[2 * goals - 1];
                     p = pp * Math.Pow((T - time), goals*2-1);
                     break;
             }
-            //// p /= this.stat_matrix[hg, gg];
+            //p *= this.stat_matrix[hg, gg];
             return p;
         }
     }

@@ -42,11 +42,6 @@ namespace GoalGuessing
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton2H = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.radioButton2G = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton3H = new System.Windows.Forms.RadioButton();
@@ -75,6 +70,8 @@ namespace GoalGuessing
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBoxRi = new System.Windows.Forms.GroupBox();
+            this.radioButtonRA8 = new System.Windows.Forms.RadioButton();
+            this.radioButtonRA7 = new System.Windows.Forms.RadioButton();
             this.radioButtonRA6 = new System.Windows.Forms.RadioButton();
             this.radioButtonRA5 = new System.Windows.Forms.RadioButton();
             this.radioButtonRA4 = new System.Windows.Forms.RadioButton();
@@ -83,6 +80,8 @@ namespace GoalGuessing
             this.radioButtonRA1 = new System.Windows.Forms.RadioButton();
             this.radioButtonRA0 = new System.Windows.Forms.RadioButton();
             this.groupBoxRf = new System.Windows.Forms.GroupBox();
+            this.radioButtonRB8 = new System.Windows.Forms.RadioButton();
+            this.radioButtonRB7 = new System.Windows.Forms.RadioButton();
             this.radioButtonRB6 = new System.Windows.Forms.RadioButton();
             this.radioButtonRB5 = new System.Windows.Forms.RadioButton();
             this.radioButtonRB4 = new System.Windows.Forms.RadioButton();
@@ -103,13 +102,13 @@ namespace GoalGuessing
             this.labelDR = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.radioButtonRA7 = new System.Windows.Forms.RadioButton();
-            this.radioButtonRA8 = new System.Windows.Forms.RadioButton();
-            this.radioButtonRB7 = new System.Windows.Forms.RadioButton();
-            this.radioButtonRB8 = new System.Windows.Forms.RadioButton();
+            this.radioButton2G = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.radioButton2H = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -117,6 +116,7 @@ namespace GoalGuessing
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBoxRi.SuspendLayout();
             this.groupBoxRf.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -217,68 +217,6 @@ namespace GoalGuessing
             this.label3.Size = new System.Drawing.Size(18, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = ":";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton2H);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.radioButton2G);
-            this.groupBox2.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.groupBox2.Location = new System.Drawing.Point(605, 142);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(176, 50);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "2nd goal";
-            this.groupBox2.UseWaitCursor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(156, 25);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(14, 13);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.UseWaitCursor = true;
-            // 
-            // radioButton2H
-            // 
-            this.radioButton2H.AutoSize = true;
-            this.radioButton2H.Location = new System.Drawing.Point(45, 25);
-            this.radioButton2H.Name = "radioButton2H";
-            this.radioButton2H.Size = new System.Drawing.Size(14, 13);
-            this.radioButton2H.TabIndex = 7;
-            this.radioButton2H.TabStop = true;
-            this.radioButton2H.UseVisualStyleBackColor = true;
-            this.radioButton2H.UseWaitCursor = true;
-            this.radioButton2H.CheckedChanged += new System.EventHandler(this.radioButton2H_CheckedChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 25);
-            this.label5.TabIndex = 6;
-            this.label5.Text = ":";
-            this.label5.UseWaitCursor = true;
-            // 
-            // radioButton2G
-            // 
-            this.radioButton2G.AutoSize = true;
-            this.radioButton2G.Location = new System.Drawing.Point(99, 25);
-            this.radioButton2G.Name = "radioButton2G";
-            this.radioButton2G.Size = new System.Drawing.Size(14, 13);
-            this.radioButton2G.TabIndex = 0;
-            this.radioButton2G.TabStop = true;
-            this.radioButton2G.UseVisualStyleBackColor = true;
-            this.radioButton2G.UseWaitCursor = true;
-            this.radioButton2G.CheckedChanged += new System.EventHandler(this.radioButton2G_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -615,6 +553,28 @@ namespace GoalGuessing
             this.groupBoxRi.Text = "from";
             this.groupBoxRi.Enter += new System.EventHandler(this.groupBoxRi_Enter);
             // 
+            // radioButtonRA8
+            // 
+            this.radioButtonRA8.AutoSize = true;
+            this.radioButtonRA8.Location = new System.Drawing.Point(21, 203);
+            this.radioButtonRA8.Name = "radioButtonRA8";
+            this.radioButtonRA8.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonRA8.TabIndex = 17;
+            this.radioButtonRA8.Text = "8";
+            this.radioButtonRA8.UseVisualStyleBackColor = true;
+            this.radioButtonRA8.CheckedChanged += new System.EventHandler(this.radioButtonRA8_CheckedChanged);
+            // 
+            // radioButtonRA7
+            // 
+            this.radioButtonRA7.AutoSize = true;
+            this.radioButtonRA7.Location = new System.Drawing.Point(21, 180);
+            this.radioButtonRA7.Name = "radioButtonRA7";
+            this.radioButtonRA7.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonRA7.TabIndex = 16;
+            this.radioButtonRA7.Text = "7";
+            this.radioButtonRA7.UseVisualStyleBackColor = true;
+            this.radioButtonRA7.CheckedChanged += new System.EventHandler(this.radioButtonRA7_CheckedChanged);
+            // 
             // radioButtonRA6
             // 
             this.radioButtonRA6.AutoSize = true;
@@ -714,6 +674,28 @@ namespace GoalGuessing
             this.groupBoxRf.TabStop = false;
             this.groupBoxRf.Text = "to";
             this.groupBoxRf.Enter += new System.EventHandler(this.groupBox7_Enter);
+            // 
+            // radioButtonRB8
+            // 
+            this.radioButtonRB8.AutoSize = true;
+            this.radioButtonRB8.Location = new System.Drawing.Point(21, 203);
+            this.radioButtonRB8.Name = "radioButtonRB8";
+            this.radioButtonRB8.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonRB8.TabIndex = 17;
+            this.radioButtonRB8.Text = "8";
+            this.radioButtonRB8.UseVisualStyleBackColor = true;
+            this.radioButtonRB8.CheckedChanged += new System.EventHandler(this.radioButtonRB8_CheckedChanged);
+            // 
+            // radioButtonRB7
+            // 
+            this.radioButtonRB7.AutoSize = true;
+            this.radioButtonRB7.Location = new System.Drawing.Point(21, 180);
+            this.radioButtonRB7.Name = "radioButtonRB7";
+            this.radioButtonRB7.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonRB7.TabIndex = 16;
+            this.radioButtonRB7.Text = "7";
+            this.radioButtonRB7.UseVisualStyleBackColor = true;
+            this.radioButtonRB7.CheckedChanged += new System.EventHandler(this.radioButtonRB7_CheckedChanged);
             // 
             // radioButtonRB6
             // 
@@ -942,45 +924,64 @@ namespace GoalGuessing
             this.label17.TabIndex = 40;
             this.label17.Text = "GOAL PREDICTOR";
             // 
-            // radioButtonRA7
+            // radioButton2G
             // 
-            this.radioButtonRA7.AutoSize = true;
-            this.radioButtonRA7.Location = new System.Drawing.Point(21, 180);
-            this.radioButtonRA7.Name = "radioButtonRA7";
-            this.radioButtonRA7.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonRA7.TabIndex = 16;
-            this.radioButtonRA7.Text = "7";
-            this.radioButtonRA7.UseVisualStyleBackColor = true;
+            this.radioButton2G.AutoSize = true;
+            this.radioButton2G.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton2G.Location = new System.Drawing.Point(99, 25);
+            this.radioButton2G.Name = "radioButton2G";
+            this.radioButton2G.Size = new System.Drawing.Size(14, 13);
+            this.radioButton2G.TabIndex = 0;
+            this.radioButton2G.TabStop = true;
+            this.radioButton2G.UseVisualStyleBackColor = true;
+            this.radioButton2G.CheckedChanged += new System.EventHandler(this.radioButton2G_CheckedChanged);
             // 
-            // radioButtonRA8
+            // label5
             // 
-            this.radioButtonRA8.AutoSize = true;
-            this.radioButtonRA8.Location = new System.Drawing.Point(21, 203);
-            this.radioButtonRA8.Name = "radioButtonRA8";
-            this.radioButtonRA8.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonRA8.TabIndex = 17;
-            this.radioButtonRA8.Text = "8";
-            this.radioButtonRA8.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(71, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(18, 25);
+            this.label5.TabIndex = 6;
+            this.label5.Text = ":";
             // 
-            // radioButtonRB7
+            // radioButton2H
             // 
-            this.radioButtonRB7.AutoSize = true;
-            this.radioButtonRB7.Location = new System.Drawing.Point(21, 180);
-            this.radioButtonRB7.Name = "radioButtonRB7";
-            this.radioButtonRB7.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonRB7.TabIndex = 16;
-            this.radioButtonRB7.Text = "7";
-            this.radioButtonRB7.UseVisualStyleBackColor = true;
+            this.radioButton2H.AutoSize = true;
+            this.radioButton2H.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton2H.Location = new System.Drawing.Point(45, 25);
+            this.radioButton2H.Name = "radioButton2H";
+            this.radioButton2H.Size = new System.Drawing.Size(14, 13);
+            this.radioButton2H.TabIndex = 7;
+            this.radioButton2H.TabStop = true;
+            this.radioButton2H.UseVisualStyleBackColor = true;
+            this.radioButton2H.CheckedChanged += new System.EventHandler(this.radioButton2H_CheckedChanged);
             // 
-            // radioButtonRB8
+            // radioButton2
             // 
-            this.radioButtonRB8.AutoSize = true;
-            this.radioButtonRB8.Location = new System.Drawing.Point(21, 203);
-            this.radioButtonRB8.Name = "radioButtonRB8";
-            this.radioButtonRB8.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonRB8.TabIndex = 17;
-            this.radioButtonRB8.Text = "8";
-            this.radioButtonRB8.UseVisualStyleBackColor = true;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(156, 25);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(14, 13);
+            this.radioButton2.TabIndex = 9;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Controls.Add(this.radioButton2H);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.radioButton2G);
+            this.groupBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.groupBox2.Location = new System.Drawing.Point(605, 142);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(176, 50);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "2nd goal";
             // 
             // FormGG
             // 
@@ -1027,8 +1028,6 @@ namespace GoalGuessing
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1042,6 +1041,8 @@ namespace GoalGuessing
             this.groupBoxRi.PerformLayout();
             this.groupBoxRf.ResumeLayout(false);
             this.groupBoxRf.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1057,10 +1058,6 @@ namespace GoalGuessing
         private System.Windows.Forms.RadioButton radioButton1H;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2H;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton2G;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton radioButton3H;
         private System.Windows.Forms.Label label6;
@@ -1080,7 +1077,6 @@ namespace GoalGuessing
         private System.Windows.Forms.Label labelH;
         private System.Windows.Forms.Label labelG;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
@@ -1123,6 +1119,11 @@ namespace GoalGuessing
         private System.Windows.Forms.RadioButton radioButtonRA7;
         private System.Windows.Forms.RadioButton radioButtonRB8;
         private System.Windows.Forms.RadioButton radioButtonRB7;
+        private System.Windows.Forms.RadioButton radioButton2G;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton radioButton2H;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
