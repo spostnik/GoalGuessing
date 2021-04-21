@@ -16,6 +16,7 @@ namespace GoalGuessing
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //FormGG formGG = new FormGG();
             Application.Run(new FormGG());
         }
     }
