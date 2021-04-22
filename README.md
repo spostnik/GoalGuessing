@@ -1,8 +1,8 @@
 # GoalGuessing
 
-App uses prediction model to guess foorball game outcomes based on statistics.
+App uses prediction model to guess football game outcomes based on statistics.
 
-Answer to test from potential employer.
+(Answer to test problem from potential employer).
 
 Log:
 1) Works only for small number of total goals, bug in probability normaliztion yet to be found. 20-Apr-2021
