@@ -1,6 +1,6 @@
 # GoalGuessing
 
-App tris to gues foorball game outcomes based on statistics.
+App uses prediction model to guess foorball game outcomes based on statistics.
 
 Answer to test from potential employer.
 
