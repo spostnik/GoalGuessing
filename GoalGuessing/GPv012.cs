@@ -399,6 +399,11 @@ namespace GoalGuessing
             _range_set();
         }
 
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            textBox1.Text = trackBar1.Value.ToString();
+        }
+
         private void radioButtonRB6_CheckedChanged(object sender, EventArgs e)
         {
             _range_set();
@@ -425,8 +430,8 @@ namespace GoalGuessing
         static string ABOUT()
         {
             string me = "Dr. Sergey Postnikov";
-            string date = "21-Apr-2021";
-            string version = "0.1.4";
+            string date = "22-Apr-2021";
+            string version = "1.0.1";
             string UUID = "9f0ed698-6285-4e81-b820-1136ccd948b4";
             string HASH = "..."; //replace with "..." then check hash
             return $"Author {me},\n date {date},\n version {version}," +
@@ -622,7 +627,8 @@ namespace GoalGuessing
             }
             else
             {
-                pp = this.stat_matrix[hg, gg]; //no more goals in time remaining
+                pp = this.stat_matrix[hg, gg]; // Statistics(hg:gg) ///room for model improvements
+                pp = pp + (1-pp)*(time/T);/// //no more goals in time remaining
                 k = (1 - pp) / pu;
                 phw *= k;
                 pgw *= k;
