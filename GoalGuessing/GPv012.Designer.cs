@@ -107,6 +107,7 @@ namespace GoalGuessing
             this.radioButton2H = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -117,6 +118,7 @@ namespace GoalGuessing
             this.groupBoxRi.SuspendLayout();
             this.groupBoxRf.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -124,7 +126,7 @@ namespace GoalGuessing
             this.pictureBox1.Image = global::GoalGuessing.Properties.Resources.prediction;
             this.pictureBox1.Location = new System.Drawing.Point(12, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(88, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -484,7 +486,7 @@ namespace GoalGuessing
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(375, 42);
+            this.label10.Location = new System.Drawing.Point(334, 46);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 25);
             this.label10.TabIndex = 13;
@@ -515,7 +517,7 @@ namespace GoalGuessing
             series1.Legend = "Legend1";
             series1.Name = "answers";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(460, 313);
+            this.chart1.Size = new System.Drawing.Size(409, 313);
             this.chart1.TabIndex = 23;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
@@ -861,7 +863,7 @@ namespace GoalGuessing
             this.labelHW.AutoSize = true;
             this.labelHW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHW.ForeColor = System.Drawing.Color.Fuchsia;
-            this.labelHW.Location = new System.Drawing.Point(131, 88);
+            this.labelHW.Location = new System.Drawing.Point(81, 87);
             this.labelHW.Name = "labelHW";
             this.labelHW.Size = new System.Drawing.Size(19, 20);
             this.labelHW.TabIndex = 35;
@@ -873,7 +875,7 @@ namespace GoalGuessing
             this.labelGW.AutoSize = true;
             this.labelGW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGW.ForeColor = System.Drawing.Color.Fuchsia;
-            this.labelGW.Location = new System.Drawing.Point(212, 88);
+            this.labelGW.Location = new System.Drawing.Point(165, 87);
             this.labelGW.Name = "labelGW";
             this.labelGW.Size = new System.Drawing.Size(19, 20);
             this.labelGW.TabIndex = 36;
@@ -884,7 +886,7 @@ namespace GoalGuessing
             this.labelOR.AutoSize = true;
             this.labelOR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOR.ForeColor = System.Drawing.Color.Fuchsia;
-            this.labelOR.Location = new System.Drawing.Point(364, 88);
+            this.labelOR.Location = new System.Drawing.Point(323, 87);
             this.labelOR.Name = "labelOR";
             this.labelOR.Size = new System.Drawing.Size(19, 20);
             this.labelOR.TabIndex = 38;
@@ -895,7 +897,7 @@ namespace GoalGuessing
             this.labelDR.AutoSize = true;
             this.labelDR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDR.ForeColor = System.Drawing.Color.Fuchsia;
-            this.labelDR.Location = new System.Drawing.Point(288, 88);
+            this.labelDR.Location = new System.Drawing.Point(244, 87);
             this.labelDR.Name = "labelDR";
             this.labelDR.Size = new System.Drawing.Size(19, 20);
             this.labelDR.TabIndex = 37;
@@ -983,11 +985,25 @@ namespace GoalGuessing
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2nd goal";
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(431, 40);
+            this.trackBar1.Maximum = 90;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.trackBar1.RightToLeftLayout = true;
+            this.trackBar1.Size = new System.Drawing.Size(45, 388);
+            this.trackBar1.TabIndex = 9;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // FormGG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.labelOR);
@@ -1043,6 +1059,7 @@ namespace GoalGuessing
             this.groupBoxRf.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1124,6 +1141,7 @@ namespace GoalGuessing
         private System.Windows.Forms.RadioButton radioButton2H;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 
